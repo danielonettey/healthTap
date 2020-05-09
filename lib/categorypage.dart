@@ -30,9 +30,9 @@ class _CategoryPageState extends State<CategoryPage> {
                 child: Text(
                   'Health Categories',
                   style: TextStyle(
-                    color: Colors.white,
-                    fontSize: width * 0.06,
-                    fontWeight: FontWeight.bold
+                      color: Colors.white,
+                      fontSize: width * 0.06,
+                      fontWeight: FontWeight.bold
                   ),
                 ),
               ),
@@ -56,7 +56,7 @@ class _CategoryPageState extends State<CategoryPage> {
 
                 decoration: BoxDecoration(
                     color: Colors.white,
-                  borderRadius: BorderRadius.all(Radius.circular(10))
+                    borderRadius: BorderRadius.all(Radius.circular(10))
                 ),
                 child: Column(
                   children: <Widget>[
@@ -97,33 +97,7 @@ class _CategoryState extends State<Category> {
         'minute. Normal heart rate varies from person to person, '
         'but a normal range for adults is 60 to 100 beats per minute, '
         'according to the Mayo Clinic.',
-    'Heart Rate':'Heart rate, also known as pulse,'
-        ' is the number of times a person\'s heart beats per '
-        'minute. Normal heart rate varies from person to person, '
-        'but a normal range for adults is 60 to 100 beats per minute, '
-        'according to the Mayo Clinic.',
-    'Heart Rate':'Heart rate, also known as pulse,'
-        ' is the number of times a person\'s heart beats per '
-        'minute. Normal heart rate varies from person to person, '
-        'but a normal range for adults is 60 to 100 beats per minute, '
-        'according to the Mayo Clinic.',
-    'Heart Rate':'Heart rate, also known as pulse,'
-        ' is the number of times a person\'s heart beats per '
-        'minute. Normal heart rate varies from person to person, '
-        'but a normal range for adults is 60 to 100 beats per minute, '
-        'according to the Mayo Clinic.',
-    'Heart Rate':'Heart rate, also known as pulse,'
-        ' is the number of times a person\'s heart beats per '
-        'minute. Normal heart rate varies from person to person, '
-        'but a normal range for adults is 60 to 100 beats per minute, '
-        'according to the Mayo Clinic.',
 
-    'Body Measurements':'Most women have a good idea what '
-        'their measurements are, but rather than assume you '
-        'know, get an accurate measurement. Going to a tailor '
-        'will give you more accurate measurements, but you '
-        'can certainly get a close approximation handling the '
-        'measuring tape yourself. ',
     'Body Measurements':'Most women have a good idea what '
         'their measurements are, but rather than assume you '
         'know, get an accurate measurement. Going to a tailor '
@@ -134,8 +108,22 @@ class _CategoryState extends State<Category> {
 
 
   final _subcategories = {
-    'Body Measurements': ['Height', 'Weight', 'Temperature','Humidity', 'Body Mass'],
-    'Heart Rate': ['Dont Go', 'Hey there'],
+//    'Body Measurements': ['Height', 'Weight', 'Temperature','Humidity', 'Body Mass'],
+//    'Heart Rate': ['Dont Go', 'Hey there'],
+
+    'Body Measurements': {
+      'Height' : '6" 0"',
+      'Weight': null,
+      'Temperature': null,
+      'Humidity': null,
+      'Body Mass': null},
+    'Heart Rate': {
+      'Height' : '6" 0"',
+      'Weight': null,
+      'Temperature': null,
+      'Humidity': null,
+      'Body Mass': null
+    },
   };
 
 
@@ -161,12 +149,12 @@ class _CategoryState extends State<Category> {
         child: Container(
           padding: EdgeInsets.symmetric(vertical: height * 0.02),
           decoration: BoxDecoration(
-              border: widget.last == true ? Border():Border(
-                  bottom: BorderSide(
-                      width: 1,
-                      color: Colors.grey
-                  )
-              ),
+            border: widget.last == true ? Border():Border(
+                bottom: BorderSide(
+                    width: 1,
+                    color: Colors.grey
+                )
+            ),
           ),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
