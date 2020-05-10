@@ -1,7 +1,30 @@
 import 'package:flutter/material.dart';
 import 'package:nfcflutter/subcategorypage.dart';
 
-import 'categorydetails.dart';
+
+//A map of categories, subcategories and results for each of them
+final _subcategories = {
+  'Body Measurements': {
+    'Height' : '6" 0"',
+    'Weight': null,
+    'Temperature': null,
+    'Humidity': null,
+    'Body Mass': null},
+  'Heart Rate': {
+    'Height' : '6" 0"',
+    'Weight': null,
+  },
+  'Respiration':{
+    'something': 'He is with the big D'
+  }
+};
+
+final images_categories = {
+  'Body Measurements' : 'assets/user.png',
+  'Heart Rate' : 'assets/walk.png',
+  'Respiration' : 'assets/walking.png',
+
+};
 
 
 
@@ -60,13 +83,10 @@ class _CategoryPageState extends State<CategoryPage> {
                 ),
                 child: Column(
                   children: <Widget>[
-                    Category(name: 'Heart Rate',image: 'assets/user.png',),
-                    Category(name: 'Body Measurements',image: 'assets/user.png',),
-                    Category(name: 'Heart Rate',image: 'assets/user.png',),
-                    Category(name: 'Heart Rate',image: 'assets/user.png',),
-                    Category(name: 'Respiration',image: 'assets/user.png',),
-                    Category(name: 'Body Measurements',image: 'assets/walk.png',),
-                    Category(name: 'Heart Rate',last: true,image: 'assets/walking.png',),
+                    Column(
+                      children: _subcategories.keys.map((item) => Category(name: item,image: images_categories[item],),).toList(),
+                    ),
+                    Category(name: 'Heart Rate',image: 'assets/user.png',last: true,),
                   ],
                 ),
               )
@@ -107,25 +127,6 @@ class _CategoryState extends State<Category> {
     'Respiration': 'Just make sure you are breathing well okay'
 
   };
-
-
-  final _subcategories = {
-
-    'Body Measurements': {
-      'Height' : '6" 0"',
-      'Weight': null,
-      'Temperature': null,
-      'Humidity': null,
-      'Body Mass': null},
-    'Heart Rate': {
-      'Height' : '6" 0"',
-      'Weight': null,
-    },
-    'Respiration':{
-      'something': 'He is with the big D'
-    }
-  };
-
 
 
   @override
