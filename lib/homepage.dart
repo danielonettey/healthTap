@@ -83,7 +83,6 @@ class _HomepageState extends State<Homepage> {
                 Container(
                   margin: EdgeInsets.only(top: height * 0.2),
                   child: Divider(
-
                     color: Colors.white,
                     thickness: 0.75,
                     endIndent: width * 0.025,
@@ -100,6 +99,7 @@ class _HomepageState extends State<Homepage> {
                       ),
                     ),
                     onTap: () {
+                      Navigator.pop(context);
                       Navigator.push(
                           context,
                           MaterialPageRoute(builder: (context) => EditPage())
@@ -120,9 +120,7 @@ class _HomepageState extends State<Homepage> {
                         style: TextStyle(color: Colors.white,fontSize: width * 0.042),
                       ),
                     ),
-                    onTap: () {
-
-                    },
+                    onTap: () => Navigator.pop(context),
                     contentPadding: EdgeInsets.all(0),
                   ),
                 ),
@@ -137,9 +135,7 @@ class _HomepageState extends State<Homepage> {
                         style: TextStyle(color: Colors.white,fontSize: width * 0.042),
                       ),
                     ),
-                    onTap: () {
-
-                    },
+                    onTap: () => Navigator.pop(context),
                     contentPadding: EdgeInsets.all(0),
                   ),
                 ),
