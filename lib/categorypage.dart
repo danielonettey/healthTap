@@ -64,7 +64,7 @@ class _CategoryPageState extends State<CategoryPage> {
                     Category(name: 'Body Measurements',image: 'assets/user.png',),
                     Category(name: 'Heart Rate',image: 'assets/user.png',),
                     Category(name: 'Heart Rate',image: 'assets/user.png',),
-                    Category(name: 'Heart Rate',image: 'assets/user.png',),
+                    Category(name: 'Respiration',image: 'assets/user.png',),
                     Category(name: 'Body Measurements',image: 'assets/walk.png',),
                     Category(name: 'Heart Rate',last: true,image: 'assets/walking.png',),
                   ],
@@ -104,12 +104,12 @@ class _CategoryState extends State<Category> {
         'will give you more accurate measurements, but you '
         'can certainly get a close approximation handling the '
         'measuring tape yourself. ',
+    'Respiration': 'Just make sure you are breathing well okay'
+
   };
 
 
   final _subcategories = {
-//    'Body Measurements': ['Height', 'Weight', 'Temperature','Humidity', 'Body Mass'],
-//    'Heart Rate': ['Dont Go', 'Hey there'],
 
     'Body Measurements': {
       'Height' : '6" 0"',
@@ -120,10 +120,10 @@ class _CategoryState extends State<Category> {
     'Heart Rate': {
       'Height' : '6" 0"',
       'Weight': null,
-      'Temperature': null,
-      'Humidity': null,
-      'Body Mass': null
     },
+    'Respiration':{
+      'something': 'He is with the big D'
+    }
   };
 
 
