@@ -3,6 +3,7 @@ import 'package:nfcflutter/exampleNFC.dart';
 
 import 'categorypage.dart';
 import 'editpage.dart';
+import 'tipspage.dart';
 
 class Homepage extends StatefulWidget {
   @override
@@ -39,7 +40,11 @@ class _HomepageState extends State<Homepage> {
                 child: ClipRRect(
                   borderRadius: BorderRadius.all(Radius.circular(100)),
                   child: InkWell(
-                    onTap: ()=>{},
+                    onTap: ()=>
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context)=>TipsPage()),
+                      ),
                     child: Container(
                       padding: EdgeInsets.all(width * 0.05),
                       decoration: BoxDecoration(
