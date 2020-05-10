@@ -4,10 +4,16 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:nfc_in_flutter/nfc_in_flutter.dart';
-
+import 'package:hive/hive.dart';
 import 'homepage.dart';
+import 'package:path_provider/path_provider.dart' as path_provider;
 
-void main() => runApp(MyApp());
+
+void main() async{
+  // final appDocumentDirectory = await path_provider.getApplicationDocumentsDirectory();
+  // Hive.init(appDocumentDirectory.path);
+  runApp(MyApp());
+}
 
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
@@ -123,6 +129,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   void dispose() {
+    //Hive.close();
     super.dispose();
     _stream?.cancel();
   }
