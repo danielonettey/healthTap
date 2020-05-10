@@ -54,10 +54,16 @@ class _CategoryPageState extends State<CategoryPage> {
     final height = MediaQuery.of(context).size.height;
     return Scaffold(
       backgroundColor: Color(0xff5EBBB4),
+      appBar: AppBar(
+        backgroundColor: Color(0xff5EBBB4),
+        title: Text(
+          'Health Data'
+        ),
+      ),
       body: SingleChildScrollView(
         child: Container(
           width: width,
-          margin: EdgeInsets.only(top: height * 0.05),
+          margin: EdgeInsets.only(top: height * 0.01),
           padding: EdgeInsets.symmetric(horizontal: width * 0.05),
           child: Column(
             children: <Widget>[

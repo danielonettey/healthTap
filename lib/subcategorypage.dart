@@ -25,28 +25,34 @@ class _SubCategoryPageState extends State<SubCategoryPage> {
 
     return Scaffold(
       backgroundColor: Color(0xff5EBBB4),
+      appBar: AppBar(
+        backgroundColor: Color(0xff5EBBB4),
+        title: Text(
+          widget.title
+        ),
+      ),
       body: SingleChildScrollView(
         child: Container(
           width: width,
-          margin: EdgeInsets.only(top: height * 0.05),
+          margin: EdgeInsets.only(top: height * 0.01),
           padding: EdgeInsets.symmetric(horizontal: width * 0.05),
           child: Column(
             children: <Widget>[
+//              Container(
+//                alignment: Alignment.bottomLeft,
+//                padding: EdgeInsets.only(bottom: height * 0.025),
+//                child: Text(
+//                  widget.title,
+//                  style: TextStyle(
+//                      color: Colors.white,
+//                      fontSize: width * 0.06,
+//                      fontWeight: FontWeight.bold
+//                  ),
+//                ),
+//              ),
               Container(
                 alignment: Alignment.bottomLeft,
-                padding: EdgeInsets.only(bottom: height * 0.025),
-                child: Text(
-                  widget.title,
-                  style: TextStyle(
-                      color: Colors.white,
-                      fontSize: width * 0.06,
-                      fontWeight: FontWeight.bold
-                  ),
-                ),
-              ),
-              Container(
-                alignment: Alignment.bottomLeft,
-                padding: EdgeInsets.only(bottom: height * 0.05),
+                padding: EdgeInsets.only(top: height * 0.01,bottom: height * 0.05),
                 child: Text(
                   widget.subtitle,
                   style: TextStyle(

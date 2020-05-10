@@ -52,6 +52,10 @@ flutter:
     - assets/apple.png
     - assets/medical-record.png
     - assets/tools.png
+    - assets/lab.png
+    - assets/lab_white.png
+    - assets/transfer.png
+    - assets/arrows.png
 
 
 

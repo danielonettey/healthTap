@@ -1,8 +1,25 @@
 import 'package:flutter/material.dart';
 import 'package:nfcflutter/exampleNFC.dart';
+import 'package:nfcflutter/transferPage.dart';
 
+import 'ResultsPage.dart';
 import 'categorypage.dart';
 import 'editpage.dart';
+
+class SideBarDivider extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    final width = MediaQuery.of(context).size.width;
+    return Container(
+      child: Divider(
+        color: Colors.white,
+        thickness: 0.75,
+        endIndent: width * 0.025,
+      ),
+    );
+  }
+}
+
 
 class Homepage extends StatefulWidget {
   @override
@@ -65,7 +82,7 @@ class _HomepageState extends State<Homepage> {
                   margin: EdgeInsets.only(top: height * 0.2),
                   child: Divider(
 
-                    color: Color(0xff757575),
+                    color: Colors.white,
                     thickness: 0.75,
                     endIndent: width * 0.025,
                   ),
@@ -89,14 +106,8 @@ class _HomepageState extends State<Homepage> {
                     contentPadding: EdgeInsets.all(0),
                   ),
                 ),
-                Container(
-                  child: Divider(
+                SideBarDivider(),
 
-                    color: Color(0xff757575),
-                    thickness: 0.75,
-                    endIndent: width * 0.025,
-                  ),
-                ),
                 Container(
                   height: height * 0.06,
                   child: ListTile(
@@ -113,13 +124,7 @@ class _HomepageState extends State<Homepage> {
                     contentPadding: EdgeInsets.all(0),
                   ),
                 ),
-                Container(
-                  child: Divider(
-                    color: Color(0xff757575),
-                    thickness: 0.75,
-                    endIndent: width * 0.025,
-                  ),
-                ),
+                SideBarDivider(),
                 Container(
                   height: height * 0.06,
                   child: ListTile(
@@ -136,16 +141,7 @@ class _HomepageState extends State<Homepage> {
                     contentPadding: EdgeInsets.all(0),
                   ),
                 ),
-
-                Container(
-
-                  child: Divider(
-
-                    color: Color(0xff757575),
-                    thickness: 0.75,
-                    endIndent: width * 0.025,
-                  ),
-                ),
+                SideBarDivider()
 
               ],
             ),
@@ -305,39 +301,113 @@ class _HomepageState extends State<Homepage> {
                 margin: EdgeInsets.only(top: height * 0.05),
                 padding: EdgeInsets.only(top: height * 0.03),
                 decoration: BoxDecoration(
+
                     border: Border(
                       top: BorderSide(
                           color: Colors.blueGrey,
-                          width: 0.5
+                          width: 2
                       ),
 
                     )
                 ),
-                child: Text(
-                  'Personal Information',
-                  style: TextStyle(
-                      color: Colors.black,
-                      fontSize: width * 0.056,
-                      fontWeight: FontWeight.w700
+                child: Container(
+                  child: InkWell(
+                    onTap: ()=> Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => ResultsPage()
+                        )
+                    ),
+                    child: Container(
+                      width: width,
+                      padding: EdgeInsets.all(width * 0.05),
+                      decoration: BoxDecoration(
+//                        border: Border.all(
+//                          color: Colors.blueGrey,
+//                          width: 2
+//                        ),
+                        borderRadius: BorderRadius.all(Radius.circular(10)),
+                        color: Color(0xff5EBBB4),
+                      ),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: <Widget>[
+                          Container(
+                            alignment: Alignment.topLeft,
+                            child: Image.asset('assets/lab_white.png',width: width * 0.18,),
+                          ),
+                         Expanded(
+                           child:  Container(
+                             padding: EdgeInsets.only(left: width * 0.05),
+                             child: Text(
+                               'Lab & Test \nResults',
+//                               textAlign: TextAlign.center,
+                               style: TextStyle(
+                                   color: Colors.white,
+                                   fontSize: width * 0.056,
+                                   fontWeight: FontWeight.w600
+                               ),
+                             ),
+                           ),
+                         )
+
+                        ],
+                      ),
+                    ),
                   ),
                 ),
               ),
 
               Container(
-                width: width,
-                child: Column(
-                  children: <Widget>[
-//                    InfoData(title: 'Full Name',result: 'Daniel Okaitei Nettey',),
-//                    TwoInfoData(firstTitle: 'Age',secondTitle: 'Gender',firstResult: '20',secondResult: 'Male',),
-//                    TwoInfoData(firstTitle: 'Weight',secondTitle: 'Height',firstResult: '200kg',secondResult: '6 feet',),
-//                    TwoInfoData(firstTitle: 'Marital Status',secondTitle: 'Emergency Contact',firstResult: 'Divorced',secondResult: '0559418732',),
-//                    InfoData(title: 'Allergies',result: 'Banku and shito fish \nAnd sometimes Fufu with aponkye',),
-//                    InfoData(title: 'Medical History',result: '2 ahsbd jgshd kjgshfjk gshdjkf gsjkdgf jksdhgfjk gsdhfj gsdhjf gdsjkf gsdjkgf jshdgf jksghdf jkgh0',),
-                  ],
-                ),
-              ),
+                margin: EdgeInsets.only(top: height * 0.02, bottom:  height * 0.05),
+                child: InkWell(
+                  onTap: ()=> Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => TransferDataPage()
+                      )
+                  ),
+                  child: Container(
+                    width: width,
+                    padding: EdgeInsets.all(width * 0.05),
+                    decoration: BoxDecoration(
+//                        border: Border.all(
+//                          color: Colors.blueGrey,
+//                          width: 2
+//                        ),
+                      borderRadius: BorderRadius.all(Radius.circular(10)),
+                      color: Color(0xff5EBBB4),
+                    ),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: <Widget>[
+                        Container(
+                          alignment: Alignment.topLeft,
+                          child: Image.asset('assets/transfer.png',width: width * 0.18,),
+                        ),
+                        Expanded(
+                          child:  Container(
+                            padding: EdgeInsets.only(left: width * 0.05),
+                            child: Text(
+                              'Transfer Data',
+//                               textAlign: TextAlign.center,
+                              style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: width * 0.056,
+                                  fontWeight: FontWeight.w600
+                              ),
+                            ),
+                          ),
+                        )
 
-//              NfcScan(),
+                      ],
+                    ),
+                  ),
+                ),
+              )
+
 
             ],
           ),
