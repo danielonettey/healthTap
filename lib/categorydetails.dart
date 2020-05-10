@@ -28,7 +28,9 @@ class _CategoryDetailsState extends State<CategoryDetails> {
 
     'Weight': 'I think about weight is a very incredible idea that can be used for a lot of thing right now but then '
         'i think i should just lorem this page to make everything easier \n\n'
-        'Or what do you think'
+        'Or what do you think',
+
+
 
   };
 
