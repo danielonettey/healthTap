@@ -12,7 +12,7 @@ class _EditPageState extends State<EditPage> {
     final height = MediaQuery.of(context).size.height;
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Color(0xff6B9DA8),
+        backgroundColor: Color(0xff4f8d88),
         title: Text(
           'Edit Profile',
         ),
@@ -123,7 +123,7 @@ class _EditPageState extends State<EditPage> {
                       padding: EdgeInsets.symmetric(vertical: height * 0.02),
                       decoration: BoxDecoration(
                         borderRadius: const BorderRadius.all(Radius.circular(10)),
-                        color: Color(0xff5EBBB4),
+                        color: Color(0xff4f8d88),
                       ),
                       alignment: Alignment.center,
                       child: Text(

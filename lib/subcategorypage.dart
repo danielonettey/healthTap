@@ -24,9 +24,9 @@ class _SubCategoryPageState extends State<SubCategoryPage> {
     print(widget.subcategories.values);
 
     return Scaffold(
-      backgroundColor: Color(0xff5EBBB4),
+      backgroundColor: Color(0xff4f8d88),
       appBar: AppBar(
-        backgroundColor: Color(0xff5EBBB4),
+        backgroundColor: Color(0xff4f8d88),
         title: Text(
           widget.title
         ),

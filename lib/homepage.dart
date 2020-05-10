@@ -35,7 +35,7 @@ class _HomepageState extends State<Homepage> {
     return Scaffold(
 
       appBar: AppBar(
-        backgroundColor: Color(0xff5EBBB4),
+        backgroundColor: Color(0xff4f8d88),
           title: Container(
             child: Text(
               'HealthTap'
@@ -45,7 +45,7 @@ class _HomepageState extends State<Homepage> {
       drawer: Container(
         width: width*0.55,
         padding: EdgeInsets.symmetric(horizontal: width * 0.065),
-        color: Color(0xff5EBBB4),
+        color: Color(0xff4f8d88),
         child: Stack(
           children: <Widget>[
             Positioned(
@@ -209,7 +209,7 @@ class _HomepageState extends State<Homepage> {
 //                          begin: Alignment.bottomCenter,
 //                          end: Alignment.topCenter,
 //                        ),
-                      color: Color(0xff5EBBB4)
+                      color: Color(0xff4f8d88)
                       ),
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
@@ -254,7 +254,7 @@ class _HomepageState extends State<Homepage> {
 //                            begin: Alignment.bottomCenter,
 //                            end: Alignment.topCenter,
 //                          ),
-                            color: Color(0xff5EBBB4)
+                            color: Color(0xff4f8d88)
                         ),
                         alignment: Alignment.center,
                         child: Text(
@@ -284,7 +284,7 @@ class _HomepageState extends State<Homepage> {
 //                            begin: Alignment.bottomCenter,
 //                            end: Alignment.topCenter,
 //
-                            color: Color(0xff5EBBB4)
+                            color: Color(0xff4f8d88)
                         ),
                         alignment: Alignment.center,
                         child: Text(
@@ -332,7 +332,7 @@ class _HomepageState extends State<Homepage> {
 //                          width: 2
 //                        ),
                         borderRadius: BorderRadius.all(Radius.circular(10)),
-                        color: Color(0xff5EBBB4),
+                        color: Color(0xff4f8d88),
                       ),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.start,
@@ -382,7 +382,7 @@ class _HomepageState extends State<Homepage> {
 //                          width: 2
 //                        ),
                       borderRadius: BorderRadius.all(Radius.circular(10)),
-                      color: Color(0xff5EBBB4),
+                      color: Color(0xff4f8d88),
                     ),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.start,

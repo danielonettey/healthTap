@@ -11,7 +11,7 @@ class _MentalHealthTipsPageState extends State<MentalHealthTipsPage>{
   Widget build(BuildContext context){
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Color(0xff6B9DA8),
+        backgroundColor: Color(0xff4f8d88),
         title: Text(
           'Mental Health Tips'
         ),
