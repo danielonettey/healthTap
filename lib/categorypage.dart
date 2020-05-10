@@ -82,12 +82,7 @@ class _CategoryPageState extends State<CategoryPage> {
                     borderRadius: BorderRadius.all(Radius.circular(10))
                 ),
                 child: Column(
-                  children: <Widget>[
-                    Column(
-                      children: _subcategories.keys.map((item) => Category(name: item,image: images_categories[item],),).toList(),
-                    ),
-                    Category(name: 'Heart Rate',image: 'assets/user.png',last: true,),
-                  ],
+                  children:  _subcategories.keys.map((item) => Category(name: item,image: images_categories[item], last: _subcategories.keys.last == item ? true: false,),).toList(),
                 ),
               )
             ],

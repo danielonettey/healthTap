@@ -1,8 +1,6 @@
 
 import 'package:flutter/material.dart';
-
 import 'categorydetails.dart';
-import 'categorypage.dart';
 
 class SubCategoryPage extends StatefulWidget {
   final String title;
@@ -18,48 +16,15 @@ class SubCategoryPage extends StatefulWidget {
 
 class _SubCategoryPageState extends State<SubCategoryPage> {
 
-  final _subcategories = {
-    'Body Measurements': {
-      'Height' : '6" 0"',
-      'Weight': 'Unavailable',
-      'Temperature': 'Unavailable',
-      'Humidity': 'Unavailable',
-      'Body Mass': 'Unavailable'},
-    'Heart Rate': {
-      'Height' : '6" 0"',
-      'Weight': 'Unavailable',
-      'Temperature': 'Unavailable',
-      'Humidity': 'Unavailable',
-      'Body Mass': 'Unavailable'
-    },
-  };
-
-  final _subcategors = {
-    'Body Measurements': [
-      'Height',
-      'Weight',
-      'Temperature',
-      'Humidity',
-      'Body Mass'
-    ],
-
-  };
-
   @override
   Widget build(BuildContext context) {
     final width = MediaQuery.of(context).size.width;
     final height = MediaQuery.of(context).size.height;
 
+    print(widget.subcategories.values);
+
     return Scaffold(
       backgroundColor: Color(0xff5EBBB4),
-//      appBar: AppBar(
-//        backgroundColor: Color(0xff5EBBB4),
-//        leading: Container(
-//          width: 900,
-//          child: Text('Back',style: TextStyle(fontSize: 30),),
-//        ),
-//
-//      ),
       body: SingleChildScrollView(
         child: Container(
           width: width,
@@ -105,7 +70,7 @@ class _SubCategoryPageState extends State<SubCategoryPage> {
                 ),
               ),
               Column(
-                children: _subcategories[widget.title].entries.map((item) => SubCategory(name: item.key.toString(),image: widget.image,answer: item.value.toString(),)).toList(),
+                children: widget.subcategories.entries.map((item) => SubCategory(name: item.key.toString(),image: widget.image,answer: item.value.toString(),)).toList(),
               )
             ],
           ),
