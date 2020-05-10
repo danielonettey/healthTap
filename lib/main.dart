@@ -19,6 +19,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.green,
         fontFamily: 'Quicksand',
+        backgroundColor: Color(0xff5EBBB4),
       ),
       home: Homepage(),
 //      home: MyHomePage(title: 'NFC HealthTap'),

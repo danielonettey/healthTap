@@ -1,7 +1,44 @@
 import 'package:flutter/material.dart';
 import 'package:nfcflutter/subcategorypage.dart';
 
-import 'categorydetails.dart';
+
+//A map of categories, subcategories and results for each of them
+final _subcategories = {
+  'Body Measurements': {
+    'Height' : '6" 0"',
+    'Weight': null,
+    'Age': null,
+    'Body Mass': null},
+  'Health Records': {
+    'Allergies' : null,
+    'Medications': null,
+    'Immunizations': null,
+    'Existing conditions': null,
+  },
+  'Vitals': {
+    'Blood Pressure' : null,
+    'Body Temperature': null,
+    'Heart Rate': null,
+    'Menstruation': null,
+  },
+  'Nutrition': {
+    'Cholesterol' : null,
+    'Dietary Energy': null,
+    'Biotin': null,
+    'Cafeine': null,
+  },
+
+  
+
+};
+
+final images_categories = {
+  'Body Measurements' : 'assets/tools.png',
+  'Nutrition' : 'assets/apple.png',
+  'Health Records' : 'assets/medical-record.png',
+  'Vitals' : 'assets/health_icon12.png',
+
+};
 
 
 
@@ -17,10 +54,16 @@ class _CategoryPageState extends State<CategoryPage> {
     final height = MediaQuery.of(context).size.height;
     return Scaffold(
       backgroundColor: Color(0xff5EBBB4),
+      appBar: AppBar(
+        backgroundColor: Color(0xff5EBBB4),
+        title: Text(
+          'Health Data'
+        ),
+      ),
       body: SingleChildScrollView(
         child: Container(
           width: width,
-          margin: EdgeInsets.only(top: height * 0.05),
+          margin: EdgeInsets.only(top: height * 0.01),
           padding: EdgeInsets.symmetric(horizontal: width * 0.05),
           child: Column(
             children: <Widget>[
@@ -30,9 +73,9 @@ class _CategoryPageState extends State<CategoryPage> {
                 child: Text(
                   'Health Categories',
                   style: TextStyle(
-                    color: Colors.white,
-                    fontSize: width * 0.06,
-                    fontWeight: FontWeight.bold
+                      color: Colors.white,
+                      fontSize: width * 0.06,
+                      fontWeight: FontWeight.bold
                   ),
                 ),
               ),
@@ -56,18 +99,10 @@ class _CategoryPageState extends State<CategoryPage> {
 
                 decoration: BoxDecoration(
                     color: Colors.white,
-                  borderRadius: BorderRadius.all(Radius.circular(10))
+                    borderRadius: BorderRadius.all(Radius.circular(10))
                 ),
                 child: Column(
-                  children: <Widget>[
-                    Category(name: 'Heart Rate',image: 'assets/user.png',),
-                    Category(name: 'Body Measurements',image: 'assets/user.png',),
-                    Category(name: 'Heart Rate',image: 'assets/user.png',),
-                    Category(name: 'Heart Rate',image: 'assets/user.png',),
-                    Category(name: 'Heart Rate',image: 'assets/user.png',),
-                    Category(name: 'Body Measurements',image: 'assets/walk.png',),
-                    Category(name: 'Heart Rate',last: true,image: 'assets/walking.png',),
-                  ],
+                  children:  _subcategories.keys.map((item) => Category(name: item,image: images_categories[item], last: _subcategories.keys.last == item ? true: false,),).toList(),
                 ),
               )
             ],
@@ -92,27 +127,7 @@ class Category extends StatefulWidget {
 class _CategoryState extends State<Category> {
 
   final _briefTitle = <String, String>{
-    'Heart Rate':'Heart rate, also known as pulse,'
-        ' is the number of times a person\'s heart beats per '
-        'minute. Normal heart rate varies from person to person, '
-        'but a normal range for adults is 60 to 100 beats per minute, '
-        'according to the Mayo Clinic.',
-    'Heart Rate':'Heart rate, also known as pulse,'
-        ' is the number of times a person\'s heart beats per '
-        'minute. Normal heart rate varies from person to person, '
-        'but a normal range for adults is 60 to 100 beats per minute, '
-        'according to the Mayo Clinic.',
-    'Heart Rate':'Heart rate, also known as pulse,'
-        ' is the number of times a person\'s heart beats per '
-        'minute. Normal heart rate varies from person to person, '
-        'but a normal range for adults is 60 to 100 beats per minute, '
-        'according to the Mayo Clinic.',
-    'Heart Rate':'Heart rate, also known as pulse,'
-        ' is the number of times a person\'s heart beats per '
-        'minute. Normal heart rate varies from person to person, '
-        'but a normal range for adults is 60 to 100 beats per minute, '
-        'according to the Mayo Clinic.',
-    'Heart Rate':'Heart rate, also known as pulse,'
+    'Nutrition':'Heart rate, also known as pulse,'
         ' is the number of times a person\'s heart beats per '
         'minute. Normal heart rate varies from person to person, '
         'but a normal range for adults is 60 to 100 beats per minute, '
@@ -124,20 +139,14 @@ class _CategoryState extends State<Category> {
         'will give you more accurate measurements, but you '
         'can certainly get a close approximation handling the '
         'measuring tape yourself. ',
-    'Body Measurements':'Most women have a good idea what '
-        'their measurements are, but rather than assume you '
-        'know, get an accurate measurement. Going to a tailor '
-        'will give you more accurate measurements, but you '
-        'can certainly get a close approximation handling the '
-        'measuring tape yourself. ',
+
+    'Health Records':'Health Record include any official diagnosis or'
+        'past prescriptions that apply to you. This will make medical '
+        'officials aware of any past or current conditions. ',
+
+    'Vitals': 'Vitals include ',    
+
   };
-
-
-  final _subcategories = {
-    'Body Measurements': ['Height', 'Weight', 'Temperature','Humidity', 'Body Mass'],
-    'Heart Rate': ['Dont Go', 'Hey there'],
-  };
-
 
 
   @override
@@ -161,12 +170,12 @@ class _CategoryState extends State<Category> {
         child: Container(
           padding: EdgeInsets.symmetric(vertical: height * 0.02),
           decoration: BoxDecoration(
-              border: widget.last == true ? Border():Border(
-                  bottom: BorderSide(
-                      width: 1,
-                      color: Colors.grey
-                  )
-              ),
+            border: widget.last == true ? Border():Border(
+                bottom: BorderSide(
+                    width: 1,
+                    color: Colors.grey
+                )
+            ),
           ),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,

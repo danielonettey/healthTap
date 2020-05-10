@@ -1,15 +1,12 @@
-import 'dart:ffi';
 
 import 'package:flutter/material.dart';
-
 import 'categorydetails.dart';
-import 'categorypage.dart';
 
 class SubCategoryPage extends StatefulWidget {
   final String title;
   final String image;
   final String subtitle;
-  final List subcategories;
+  final Map subcategories;
 
 
   const SubCategoryPage({Key key, this.title, this.image, this.subtitle, this.subcategories}) : super(key: key);
@@ -19,69 +16,43 @@ class SubCategoryPage extends StatefulWidget {
 
 class _SubCategoryPageState extends State<SubCategoryPage> {
 
-  final _subcategories = {
-    'Body Measurements': {
-      'Height' : '6" 0"',
-      'Weight': null,
-      'Temperature': null,
-      'Humidity': null,
-      'Body Mass': null},
-    'Heart Rate': {
-      'Height' : '6" 0"',
-      'Weight': null,
-      'Temperature': null,
-      'Humidity': null,
-      'Body Mass': null
-    },
-  };
-
-  final _subcategors = {
-    'Body Measurements': [
-      'Height',
-      'Weight',
-      'Temperature',
-      'Humidity',
-      'Body Mass'
-    ]
-  };
-
   @override
   Widget build(BuildContext context) {
     final width = MediaQuery.of(context).size.width;
     final height = MediaQuery.of(context).size.height;
 
+    print(widget.subcategories.values);
+
     return Scaffold(
       backgroundColor: Color(0xff5EBBB4),
-//      appBar: AppBar(
-//        backgroundColor: Color(0xff5EBBB4),
-//        leading: Container(
-//          width: 900,
-//          child: Text('Back',style: TextStyle(fontSize: 30),),
-//        ),
-//
-//      ),
+      appBar: AppBar(
+        backgroundColor: Color(0xff5EBBB4),
+        title: Text(
+          widget.title
+        ),
+      ),
       body: SingleChildScrollView(
         child: Container(
           width: width,
-          margin: EdgeInsets.only(top: height * 0.05),
+          margin: EdgeInsets.only(top: height * 0.01),
           padding: EdgeInsets.symmetric(horizontal: width * 0.05),
           child: Column(
             children: <Widget>[
+//              Container(
+//                alignment: Alignment.bottomLeft,
+//                padding: EdgeInsets.only(bottom: height * 0.025),
+//                child: Text(
+//                  widget.title,
+//                  style: TextStyle(
+//                      color: Colors.white,
+//                      fontSize: width * 0.06,
+//                      fontWeight: FontWeight.bold
+//                  ),
+//                ),
+//              ),
               Container(
                 alignment: Alignment.bottomLeft,
-                padding: EdgeInsets.only(bottom: height * 0.025),
-                child: Text(
-                  widget.title,
-                  style: TextStyle(
-                      color: Colors.white,
-                      fontSize: width * 0.06,
-                      fontWeight: FontWeight.bold
-                  ),
-                ),
-              ),
-              Container(
-                alignment: Alignment.bottomLeft,
-                padding: EdgeInsets.only(bottom: height * 0.05),
+                padding: EdgeInsets.only(top: height * 0.01,bottom: height * 0.05),
                 child: Text(
                   widget.subtitle,
                   style: TextStyle(
@@ -104,49 +75,9 @@ class _SubCategoryPageState extends State<SubCategoryPage> {
                   ),
                 ),
               ),
-
-//              Column(
-//                children: _subcategories[widget.title].map((item, result) => MapEntry(item, result) ).,
-//              )
-
               Column(
-                children: _subcategors[widget.title].map((item) => SubCategory(name: item.toString(),image: widget.image,answer: '6" 12"',)).toList(),
+                children: widget.subcategories.entries.map((item) => SubCategory(name: item.key.toString(),image: widget.image,answer: item.value.toString(),)).toList(),
               )
-
-//              SubCategory(name: item.toString(),image: widget.image,answer: result,)
-
-
-
-//              Container(
-//                alignment: Alignment.bottomLeft,
-//                padding: EdgeInsets.only(bottom: height * 0.02),
-//                child: Text(
-//                  'No Data Available',
-//                  style: TextStyle(
-//                      color: Colors.white,
-//                      fontSize: width * 0.05,
-//                      fontWeight: FontWeight.w600
-//                  ),
-//                ),
-//              ),
-//              Container(
-//                padding: EdgeInsets.symmetric(vertical: width * 0.01, horizontal: width * 0.05),
-//                width: width,
-//                decoration: BoxDecoration(
-//                    color: Colors.white,
-//                    borderRadius: BorderRadius.all(Radius.circular(10))
-//                ),
-//                child: Column(
-//                  children: <Widget>[
-//                    Category(name: 'Height',sub: true,),
-//                    Category(name: 'Height',sub: true,),
-//                    Category(name: 'Height',sub: true,),
-//                    Category(name: 'Height',sub: true,),
-//                    Category(name: 'Height',sub: true,),
-//                    Category(name: 'Height',sub: true,last: true,),
-//                  ],
-//                ),
-//              )
             ],
           ),
         ),
@@ -183,7 +114,10 @@ class _SubCategoryState extends State<SubCategory> {
         onTap: ()=>Navigator.push(
             context,
             MaterialPageRoute(
-                builder: (context) => CategoryDetails()
+                builder: (context) => CategoryDetails(
+                  name: widget.name,
+                  answer: widget.answer,
+                )
             )
         ),
 

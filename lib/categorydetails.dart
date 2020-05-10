@@ -3,11 +3,38 @@ import 'package:flutter/material.dart';
 import 'package:nfcflutter/addDetail.dart';
 
 class CategoryDetails extends StatefulWidget {
+  final String name;
+  final String answer;
+
+  const CategoryDetails({Key key, this.name, this.answer}) : super(key: key);
   @override
   _CategoryDetailsState createState() => _CategoryDetailsState();
 }
 
 class _CategoryDetailsState extends State<CategoryDetails> {
+
+  Map _aboutCategory = {
+    'Height': 'Height is measure of vertical distance, either vertical extent '
+        '(how "tall" something or someone is) or vertical position (how "high" a point is).\n\n'
+        ' For example, "The height of that building is 50 m" or "The height of an airplane is about 10,000 m". '
+        'When the term is used to describe vertical position '
+        '(of, e.g., an airplane) from sea level, height is more often '
+        'called altitude. Furthermore, if the point is attached '
+        'to the Earth (e.g., a mountain peak), then altitude (height above '
+        'sea level) is called elevation.\n\nIn a Cartesian space, height is '
+        'measured along the vertical axis (y) between a specific point and '
+        'another that does not have the same y-value. If both points happen '
+        'to have the same y-value, then their relative height equal to zero.',
+
+    'Weight': 'I think about weight is a very incredible idea that can be used for a lot of thing right now but then '
+        'i think i should just lorem this page to make everything easier \n\n'
+        'Or what do you think',
+
+
+
+  };
+
+
   @override
   Widget build(BuildContext context) {
     final width = MediaQuery.of(context).size.width;
@@ -16,7 +43,7 @@ class _CategoryDetailsState extends State<CategoryDetails> {
       appBar: AppBar(
         backgroundColor: Color(0xff5EBBB4),
         title: Text(
-            'Height',
+            widget.name,
 
         ),
         actions: <Widget>[
@@ -24,7 +51,9 @@ class _CategoryDetailsState extends State<CategoryDetails> {
             onPressed:  ()=>Navigator.push(
                 context,
                 MaterialPageRoute(
-                    builder: (context) => AddDetailPage()
+                    builder: (context) => AddDetailPage(
+                      name: widget.name
+                    )
                 )
             ),
             child: Text(
@@ -48,7 +77,7 @@ class _CategoryDetailsState extends State<CategoryDetails> {
               Container(
                 alignment: Alignment.topLeft,
                 child: Text(
-                  '6\" 0" inches ',
+                  widget.answer,
                   style: TextStyle(
                       color: Colors.white,
                     fontSize: width * 0.08,
@@ -72,7 +101,7 @@ class _CategoryDetailsState extends State<CategoryDetails> {
                 padding: EdgeInsets.only(bottom: height * 0.01),
                 alignment: Alignment.topLeft,
                 child: Text(
-                  'About Height',
+                  'About ' + widget.name,
                   style: TextStyle(
                     color: Colors.white,
                       fontSize: width * 0.05,
@@ -88,17 +117,7 @@ class _CategoryDetailsState extends State<CategoryDetails> {
                   borderRadius: BorderRadius.all(Radius.circular(10))
                 ),
                 child: Text(
-                  'Height is measure of vertical distance, either vertical extent '
-                      '(how "tall" something or someone is) or vertical position (how "high" a point is).\n\n'
-                      ' For example, "The height of that building is 50 m" or "The height of an airplane is about 10,000 m". '
-                      'When the term is used to describe vertical position '
-                      '(of, e.g., an airplane) from sea level, height is more often '
-                      'called altitude. Furthermore, if the point is attached '
-                      'to the Earth (e.g., a mountain peak), then altitude (height above '
-                      'sea level) is called elevation.\n\nIn a Cartesian space, height is '
-                      'measured along the vertical axis (y) between a specific point and '
-                      'another that does not have the same y-value. If both points happen '
-                      'to have the same y-value, then their relative height equal to zero.',
+                  _aboutCategory[widget.name],
                   style: TextStyle(
                     color: Colors.black,
                     fontSize: width * 0.036,

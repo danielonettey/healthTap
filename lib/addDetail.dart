@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 
 class AddDetailPage extends StatefulWidget {
+  final String name;
+
+  const AddDetailPage({Key key, this.name}) : super(key: key);
   @override
   _AddDetailPageState createState() => _AddDetailPageState();
 }
@@ -29,7 +32,7 @@ class _AddDetailPageState extends State<AddDetailPage> {
       appBar: AppBar(
         backgroundColor: Color(0xff5EBBB4),
         title: Text(
-          'Height',
+          widget.name,
 
         ),
         actions: <Widget>[
@@ -131,9 +134,7 @@ class _AddDetailPageState extends State<AddDetailPage> {
                           DateTime.now().hour.toString() + ':' + (DateTime.now().minute < 10 ? '0': '' )+
                             DateTime.now().minute.toString()  +' am':
                           (DateTime.now().hour-12).toString() + ':' + (DateTime.now().minute < 10 ? '0': '' )+
-                              DateTime.now().minute.toString()   + ' pm'
-                        ,
-
+                              DateTime.now().minute.toString()   + ' pm',
 
                         style: TextStyle(
                             color: Colors.black,
@@ -161,7 +162,7 @@ class _AddDetailPageState extends State<AddDetailPage> {
                   children: <Widget>[
                     Container(
                       child: Text(
-                        'Height',
+                        widget.name,
                         style: TextStyle(
                           color: Colors.grey,
                           fontSize: width * 0.04,
