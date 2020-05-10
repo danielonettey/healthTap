@@ -44,7 +44,6 @@ class _CategoryDetailsState extends State<CategoryDetails> {
         backgroundColor: Color(0xff5EBBB4),
         title: Text(
             widget.name,
-
         ),
         actions: <Widget>[
           FlatButton(
