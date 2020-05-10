@@ -7,22 +7,36 @@ final _subcategories = {
   'Body Measurements': {
     'Height' : '6" 0"',
     'Weight': null,
-    'Temperature': null,
-    'Humidity': null,
+    'Age': null,
     'Body Mass': null},
-  'Heart Rate': {
-    'Height' : '6" 0"',
-    'Weight': null,
+  'Health Records': {
+    'Allergies' : null,
+    'Medications': null,
+    'Immunizations': null,
+    'Existing conditions': null,
   },
-  'Respiration':{
-    'something': 'He is with the big D'
-  }
+  'Vitals': {
+    'Blood Pressure' : null,
+    'Body Temperature': null,
+    'Heart Rate': null,
+    'Menstruation': null,
+  },
+  'Nutrition': {
+    'Cholesterol' : null,
+    'Dietary Energy': null,
+    'Biotin': null,
+    'Cafeine': null,
+  },
+
+  
+
 };
 
 final images_categories = {
-  'Body Measurements' : 'assets/user.png',
-  'Heart Rate' : 'assets/walk.png',
-  'Respiration' : 'assets/walking.png',
+  'Body Measurements' : 'assets/tools.png',
+  'Nutrition' : 'assets/apple.png',
+  'Health Records' : 'assets/medical-record.png',
+  'Vitals' : 'assets/health_icon12.png',
 
 };
 
@@ -107,7 +121,7 @@ class Category extends StatefulWidget {
 class _CategoryState extends State<Category> {
 
   final _briefTitle = <String, String>{
-    'Heart Rate':'Heart rate, also known as pulse,'
+    'Nutrition':'Heart rate, also known as pulse,'
         ' is the number of times a person\'s heart beats per '
         'minute. Normal heart rate varies from person to person, '
         'but a normal range for adults is 60 to 100 beats per minute, '
@@ -119,7 +133,12 @@ class _CategoryState extends State<Category> {
         'will give you more accurate measurements, but you '
         'can certainly get a close approximation handling the '
         'measuring tape yourself. ',
-    'Respiration': 'Just make sure you are breathing well okay'
+
+    'Health Records':'Health Record include any official diagnosis or'
+        'past prescriptions that apply to you. This will make medical '
+        'officials aware of any past or current conditions. ',
+
+    'Vitals': 'Vitals include ',    
 
   };
 
