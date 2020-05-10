@@ -48,6 +48,10 @@ flutter:
     - assets/user.png
     - assets/walk.png
     - assets/walking.png
+    - assets/health_icon12.png
+    - assets/apple.png
+    - assets/medical-record.png
+    - assets/tools.png
 
 
 
