@@ -307,7 +307,7 @@ class _HomepageState extends State<Homepage> {
                 decoration: BoxDecoration(
                     border: Border(
                       top: BorderSide(
-                          color: Colors.grey,
+                          color: Colors.blueGrey,
                           width: 0.5
                       ),
 
