@@ -30,6 +30,76 @@ class _CategoryDetailsState extends State<CategoryDetails> {
         'i think i should just lorem this page to make everything easier \n\n'
         'Or what do you think',
 
+    'Age' : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. ' 
+    'Integer venenatis volutpat sapien cursus porta. Proin id metus eget felis dictum ultrices ac ut nulla. '
+    'Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.'
+    'Praesent eu metus felis. Aliquam aliquet ex vitae rhoncus sagittis.',    
+
+    'Body Mass' : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. ' 
+    'Integer venenatis volutpat sapien cursus porta. Proin id metus eget felis dictum ultrices ac ut nulla. '
+    'Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.'
+    'Praesent eu metus felis. Aliquam aliquet ex vitae rhoncus sagittis.',
+
+    'Allergies' : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. ' 
+    'Integer venenatis volutpat sapien cursus porta. Proin id metus eget felis dictum ultrices ac ut nulla. '
+    'Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.'
+    'Praesent eu metus felis. Aliquam aliquet ex vitae rhoncus sagittis.',
+
+    'Medications' : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. ' 
+    'Integer venenatis volutpat sapien cursus porta. Proin id metus eget felis dictum ultrices ac ut nulla. '
+    'Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.'
+    'Praesent eu metus felis. Aliquam aliquet ex vitae rhoncus sagittis.',
+
+    'Immunizations' : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. ' 
+    'Integer venenatis volutpat sapien cursus porta. Proin id metus eget felis dictum ultrices ac ut nulla. '
+    'Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.'
+    'Praesent eu metus felis. Aliquam aliquet ex vitae rhoncus sagittis.',
+
+    'Existing conditions' : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. ' 
+    'Integer venenatis volutpat sapien cursus porta. Proin id metus eget felis dictum ultrices ac ut nulla. '
+    'Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.'
+    'Praesent eu metus felis. Aliquam aliquet ex vitae rhoncus sagittis.',
+
+    'Blood Pressure' : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. ' 
+    'Integer venenatis volutpat sapien cursus porta. Proin id metus eget felis dictum ultrices ac ut nulla. '
+    'Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.'
+    'Praesent eu metus felis. Aliquam aliquet ex vitae rhoncus sagittis.',
+
+    'Body Temperature' : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. ' 
+    'Integer venenatis volutpat sapien cursus porta. Proin id metus eget felis dictum ultrices ac ut nulla. '
+    'Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.'
+    'Praesent eu metus felis. Aliquam aliquet ex vitae rhoncus sagittis.',
+
+    'Heart Rate' : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. ' 
+    'Integer venenatis volutpat sapien cursus porta. Proin id metus eget felis dictum ultrices ac ut nulla. '
+    'Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.'
+    'Praesent eu metus felis. Aliquam aliquet ex vitae rhoncus sagittis.',
+
+    'Menstruation' : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. ' 
+    'Integer venenatis volutpat sapien cursus porta. Proin id metus eget felis dictum ultrices ac ut nulla. '
+    'Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.'
+    'Praesent eu metus felis. Aliquam aliquet ex vitae rhoncus sagittis.',
+
+    'Cholesterol' : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. ' 
+    'Integer venenatis volutpat sapien cursus porta. Proin id metus eget felis dictum ultrices ac ut nulla. '
+    'Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.'
+    'Praesent eu metus felis. Aliquam aliquet ex vitae rhoncus sagittis.',
+
+    'Dietary Energy' : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. ' 
+    'Integer venenatis volutpat sapien cursus porta. Proin id metus eget felis dictum ultrices ac ut nulla. '
+    'Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.'
+    'Praesent eu metus felis. Aliquam aliquet ex vitae rhoncus sagittis.',
+
+    'Biotin' : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. ' 
+    'Integer venenatis volutpat sapien cursus porta. Proin id metus eget felis dictum ultrices ac ut nulla. '
+    'Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.'
+    'Praesent eu metus felis. Aliquam aliquet ex vitae rhoncus sagittis.',
+
+    'Caffeine' : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. ' 
+    'Integer venenatis volutpat sapien cursus porta. Proin id metus eget felis dictum ultrices ac ut nulla. '
+    'Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.'
+    'Praesent eu metus felis. Aliquam aliquet ex vitae rhoncus sagittis.',
+
 
 
   };
