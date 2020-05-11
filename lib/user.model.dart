@@ -15,7 +15,7 @@ class UserModel{
   String last_name;
 
   @HiveField(3)
-  DateTime date0fBirth;
+  String date0fBirth;
 
   @HiveField(4)
   String gender;
