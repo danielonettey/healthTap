@@ -6,13 +6,19 @@ class EditPage extends StatefulWidget {
 }
 
 class _EditPageState extends State<EditPage> {
+
+  doneClicked(){
+    print("Printing data");
+    Navigator.pop(context);
+  }
+
   @override
   Widget build(BuildContext context) {
     final width = MediaQuery.of(context).size.width;
     final height = MediaQuery.of(context).size.height;
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Color(0xff4f8d88),
+        backgroundColor: Color(0xff6B9DA8),
         title: Text(
           'Edit Profile',
         ),
@@ -86,44 +92,44 @@ class _EditPageState extends State<EditPage> {
               ProfileTextField(title: 'Weight'),
 
 
-              Container(
-                padding: EdgeInsets.only(top: height * 0.05, bottom: height * 0.02),
-                decoration: BoxDecoration(
-                    border: Border(
-                        bottom: BorderSide(
-                            width: 0.75,
-                            color: Colors.grey
-                        )
-                    )
-                ),
-                alignment: Alignment.bottomLeft,
-                child: Text(
-                  'Medical History',
-                  style: TextStyle(
-                      color: Colors.black,
-                      fontWeight: FontWeight.w600,
-                      fontSize: width * 0.05
-                  ),
-                ),
-              ),
+              // Container(
+              //   padding: EdgeInsets.only(top: height * 0.05, bottom: height * 0.02),
+              //   decoration: BoxDecoration(
+              //       border: Border(
+              //           bottom: BorderSide(
+              //               width: 0.75,
+              //               color: Colors.grey
+              //           )
+              //       )
+              //   ),
+              //   alignment: Alignment.bottomLeft,
+              //   child: Text(
+              //     'Medical History',
+              //     style: TextStyle(
+              //         color: Colors.black,
+              //         fontWeight: FontWeight.w600,
+              //         fontSize: width * 0.05
+              //     ),
+              //   ),
+              // ),
 
-              ProfileTextField(title: 'First Name', hint: 'Emmanuel',),
-              ProfileTextField(title: 'Last Name', hint: 'Antwi',),
-              ProfileTextField(title: 'Date of Birth'),
-              ProfileTextField(title: 'Sex'),
-              ProfileTextField(title: 'Height'),
-              ProfileTextField(title: 'Weight'),
+              // ProfileTextField(title: 'First Name', hint: 'Emmanuel',),
+              // ProfileTextField(title: 'Last Name', hint: 'Antwi',),
+              // ProfileTextField(title: 'Date of Birth'),
+              // ProfileTextField(title: 'Sex'),
+              // ProfileTextField(title: 'Height'),
+              // ProfileTextField(title: 'Weight'),
 
               Container(
                   margin: EdgeInsets.symmetric(vertical: height * 0.05),
                   child: InkWell(
-                    onTap: ()=>{},
+                    onTap: ()=>{doneClicked()},
                     child: Container(
                       width: width * 0.8,
                       padding: EdgeInsets.symmetric(vertical: height * 0.02),
                       decoration: BoxDecoration(
                         borderRadius: const BorderRadius.all(Radius.circular(10)),
-                        color: Color(0xff4f8d88),
+                        color: Color(0xff5EBBB4),
                       ),
                       alignment: Alignment.center,
                       child: Text(
