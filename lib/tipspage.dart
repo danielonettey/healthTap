@@ -123,27 +123,29 @@ class MajorTips extends StatelessWidget {
     final width = MediaQuery.of(context).size.width;
     final height = MediaQuery.of(context).size.height;
     return Container(
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.all(Radius.circular(10)),
-        color: Color(0xff4f8d88),
-      ),
-      padding: EdgeInsets.all(width * 0.05),
-      margin: EdgeInsets.symmetric(horizontal: width * 0.06, vertical: width * 0.02),
-      alignment: Alignment.topLeft,
       child: InkWell(
         onTap: ()=>
             Navigator.push(
               context,
               MaterialPageRoute(builder: (context)=>this.next),
             ),
-        child: Text(
-            this.name,
-            style: TextStyle(
-                color: Colors.white,
+        child: Container(
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.all(Radius.circular(10)),
+            color: Color(0xff4f8d88),
+          ),
+          padding: EdgeInsets.all(width * 0.05),
+          margin: EdgeInsets.symmetric(horizontal: width * 0.06, vertical: width * 0.02),
+          alignment: Alignment.topLeft,
+          child: Text(
+              this.name,
+              style: TextStyle(
+                  color: Colors.white,
 //                color: Color(0xff4f8d88),
-                fontWeight: FontWeight.w600,
-                fontSize: width * 0.05
-            )
+                  fontWeight: FontWeight.w600,
+                  fontSize: width * 0.05
+              )
+          ),
         ),
       ),
 
