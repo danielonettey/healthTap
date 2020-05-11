@@ -6,6 +6,22 @@ class EditPage extends StatefulWidget {
 }
 
 class _EditPageState extends State<EditPage> {
+
+  doneClicked(){
+    //print it literally
+    print(fname.text);
+    print(sname.text);
+    print(dob.text);
+    print(sex.text);
+    //Leave that screen
+    Navigator.pop(context);
+  }
+
+  final fname = TextEditingController();
+  final sname = TextEditingController();
+  final dob = TextEditingController();
+  final sex = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     final width = MediaQuery.of(context).size.width;
@@ -17,7 +33,7 @@ class _EditPageState extends State<EditPage> {
           'Edit Profile',
         ),
         actions: <Widget>[
-          FlatButton.icon(onPressed: ()=>Navigator.pop(context), icon: Icon(Icons.done_all), label: Text(''))
+          FlatButton.icon(onPressed: doneClicked, icon: Icon(Icons.done_all), label: Text(''))
         ],
       ),
       body: SingleChildScrollView(
@@ -78,46 +94,16 @@ class _EditPageState extends State<EditPage> {
                 ),
               ),
 
-              ProfileTextField(title: 'First Name', hint: 'Emmanuel',),
-              ProfileTextField(title: 'Last Name', hint: 'Antwi',),
-              ProfileTextField(title: 'Date of Birth'),
-              ProfileTextField(title: 'Sex'),
-              ProfileTextField(title: 'Height'),
-              ProfileTextField(title: 'Weight'),
-
-
-              Container(
-                padding: EdgeInsets.only(top: height * 0.05, bottom: height * 0.02),
-                decoration: BoxDecoration(
-                    border: Border(
-                        bottom: BorderSide(
-                            width: 0.75,
-                            color: Colors.grey
-                        )
-                    )
-                ),
-                alignment: Alignment.bottomLeft,
-                child: Text(
-                  'Medical History',
-                  style: TextStyle(
-                      color: Colors.black,
-                      fontWeight: FontWeight.w600,
-                      fontSize: width * 0.05
-                  ),
-                ),
-              ),
-
-              ProfileTextField(title: 'First Name', hint: 'Emmanuel',),
-              ProfileTextField(title: 'Last Name', hint: 'Antwi',),
-              ProfileTextField(title: 'Date of Birth'),
-              ProfileTextField(title: 'Sex'),
-              ProfileTextField(title: 'Height'),
-              ProfileTextField(title: 'Weight'),
+              ProfileTextField(title: 'First Name', hint: 'Emmanuel',controller: fname,),
+              ProfileTextField(title: 'Last Name', hint: 'Antwi',controller: sname,),
+              ProfileTextField(title: 'Date of Birth', controller: dob,),
+              ProfileTextField(title: 'Sex',controller: sex,),
 
               Container(
                   margin: EdgeInsets.symmetric(vertical: height * 0.05),
+                  padding: EdgeInsets.only(top: height * 0.02),
                   child: InkWell(
-                    onTap: ()=>{},
+                    onTap: doneClicked,
                     child: Container(
                       width: width * 0.8,
                       padding: EdgeInsets.symmetric(vertical: height * 0.02),
@@ -149,14 +135,18 @@ class _EditPageState extends State<EditPage> {
 class ProfileTextField extends StatefulWidget {
   final String title;
   final String hint;
-  final int lines;
+  final TextEditingController controller;
 
-  const ProfileTextField({Key key, this.title, this.hint, this.lines}) : super(key: key);
+  const ProfileTextField({Key key, this.title, this.hint, this.controller}) : super(key: key);
+
   @override
   _ProfileTextFieldState createState() => _ProfileTextFieldState();
 }
 
 class _ProfileTextFieldState extends State<ProfileTextField> {
+
+
+
 
 
   @override
@@ -187,12 +177,22 @@ class _ProfileTextFieldState extends State<ProfileTextField> {
           Expanded(
             flex: 5,
             child: TextFormField(
+                controller: widget.controller,
+//                onEditingComplete: ()=>{
+//                  print(myController.text),
+//                },
+//                onChanged: (a)=>{
+//                  print(a),
+//                },
+//                onSaved: (a)=>{
+//                  print(a),
+//                },
                 style: TextStyle(
                     color: Colors.black,
                     fontWeight: FontWeight.w500,
                     fontSize: width * 0.038
                 ),
-                maxLines: widget.lines!=null ? widget.lines : 1,
+                maxLines: 1,
                 decoration: InputDecoration(
                   hintText: widget.hint != null ? widget.hint: 'Optional',
                   enabledBorder: UnderlineInputBorder(
