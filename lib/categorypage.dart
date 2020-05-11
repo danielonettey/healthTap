@@ -8,7 +8,8 @@ final _subcategories = {
     'Height' : '6" 0"',
     'Weight': null,
     'Age': null,
-    'Body Mass': null},
+    'Body Mass': null,
+    },
   'Health Records': {
     'Allergies' : null,
     'Medications': null,
@@ -25,7 +26,7 @@ final _subcategories = {
     'Cholesterol' : null,
     'Dietary Energy': null,
     'Biotin': null,
-    'Cafeine': null,
+    'Caffeine': null,
   },
 
   
@@ -53,9 +54,9 @@ class _CategoryPageState extends State<CategoryPage> {
     final width = MediaQuery.of(context).size.width;
     final height = MediaQuery.of(context).size.height;
     return Scaffold(
-      backgroundColor: Color(0xff5EBBB4),
+      backgroundColor: Color(0xff4f8d88),
       appBar: AppBar(
-        backgroundColor: Color(0xff5EBBB4),
+        backgroundColor: Color(0xff4f8d88),
         title: Text(
           'Health Data'
         ),
@@ -83,9 +84,9 @@ class _CategoryPageState extends State<CategoryPage> {
                 alignment: Alignment.bottomLeft,
                 padding: EdgeInsets.only(bottom: height * 0.05),
                 child: Text(
-                  'Lorem Ipsum is simply dummy text of the printing and '
-                      'typesetting industry. Lorem Ipsum has been the industry\'s '
-                      'standard dummy text ever since the 1500s, when an unknown  ',
+                  'These are the categories of health data for which you can record. '
+                      'Feel free to input information for any category. '
+                      'All information are kept within the confines of the application.  ',
                   style: TextStyle(
                       color: Colors.white,
                       fontSize: width * 0.04,

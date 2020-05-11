@@ -13,9 +13,9 @@ class _TransferDataPageState extends State<TransferDataPage> {
     final width = MediaQuery.of(context).size.width;
     final height = MediaQuery.of(context).size.height;
     return Scaffold(
-      backgroundColor: Color(0xff5EBBB4),
+      backgroundColor: Colors.white,
       appBar: AppBar(
-        backgroundColor: Color(0xff5EBBB4),
+        backgroundColor: Color(0xff4f8d88),
         title: Text(
           'Transfer Data'
         ),
@@ -33,7 +33,7 @@ class _TransferDataPageState extends State<TransferDataPage> {
                 child: Text(
                   'Recipient: Dr. Daniel Nettey',
                   style: TextStyle(
-                      color: Colors.white,
+                      color: Colors.black,
                       fontSize: width * 0.06,
                       fontWeight: FontWeight.bold
                   ),
@@ -45,7 +45,7 @@ class _TransferDataPageState extends State<TransferDataPage> {
                 child: Text(
                   'Double tap on icon below to transfer data',
                   style: TextStyle(
-                      color: Colors.white,
+                      color: Colors.black,
                       fontSize: width * 0.04,
                       fontWeight: FontWeight.w500
                   ),
@@ -62,14 +62,14 @@ class _TransferDataPageState extends State<TransferDataPage> {
                       height: width * 0.6,
                       decoration: BoxDecoration(
                           borderRadius: BorderRadius.all(Radius.circular(500)),
-                          color: Colors.white
+                          color: Colors.black
                       ),
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: <Widget>[
                           Image(
                             image: AssetImage('assets/arrows.png'),
-                            height:  height * 0.15,
+                            height:  height * 0.18,
                           ),
                         ],
                       ),

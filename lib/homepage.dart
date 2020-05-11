@@ -5,6 +5,8 @@ import 'package:nfcflutter/transferPage.dart';
 import 'ResultsPage.dart';
 import 'categorypage.dart';
 import 'editpage.dart';
+import 'medicationPage.dart';
+import 'tipspage.dart';
 
 class SideBarDivider extends StatelessWidget {
   @override
@@ -34,7 +36,7 @@ class _HomepageState extends State<Homepage> {
     return Scaffold(
 
       appBar: AppBar(
-        backgroundColor: Color(0xff5EBBB4),
+        backgroundColor: Color(0xff4f8d88),
           title: Container(
             child: Text(
               'HealthTap'
@@ -44,7 +46,7 @@ class _HomepageState extends State<Homepage> {
       drawer: Container(
         width: width*0.55,
         padding: EdgeInsets.symmetric(horizontal: width * 0.065),
-        color: Color(0xff5EBBB4),
+        color: Color(0xff4f8d88),
         child: Stack(
           children: <Widget>[
             Positioned(
@@ -81,7 +83,6 @@ class _HomepageState extends State<Homepage> {
                 Container(
                   margin: EdgeInsets.only(top: height * 0.2),
                   child: Divider(
-
                     color: Colors.white,
                     thickness: 0.75,
                     endIndent: width * 0.025,
@@ -98,6 +99,7 @@ class _HomepageState extends State<Homepage> {
                       ),
                     ),
                     onTap: () {
+                      Navigator.pop(context);
                       Navigator.push(
                           context,
                           MaterialPageRoute(builder: (context) => EditPage())
@@ -118,9 +120,7 @@ class _HomepageState extends State<Homepage> {
                         style: TextStyle(color: Colors.white,fontSize: width * 0.042),
                       ),
                     ),
-                    onTap: () {
-
-                    },
+                    onTap: () => Navigator.pop(context),
                     contentPadding: EdgeInsets.all(0),
                   ),
                 ),
@@ -135,9 +135,7 @@ class _HomepageState extends State<Homepage> {
                         style: TextStyle(color: Colors.white,fontSize: width * 0.042),
                       ),
                     ),
-                    onTap: () {
-
-                    },
+                    onTap: () => Navigator.pop(context),
                     contentPadding: EdgeInsets.all(0),
                   ),
                 ),
@@ -192,30 +190,27 @@ class _HomepageState extends State<Homepage> {
                 child: ClipRRect(
                   borderRadius: BorderRadius.all(Radius.circular(100)),
                   child: InkWell(
-                    onTap: ()=>{},
+                    onTap: ()=>
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context)=> TransferDataPage()),
+                      ),
                     child: Container(
                       padding: EdgeInsets.all(width * 0.05),
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.all(Radius.circular(100)),
-//                        gradient: LinearGradient(
-//                          colors: const [
-//                            Colors.red, Colors.redAccent
-//                          ],
-//                          begin: Alignment.bottomCenter,
-//                          end: Alignment.topCenter,
-//                        ),
-                      color: Color(0xff5EBBB4)
+                      color: Color(0xff4f8d88)
                       ),
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: <Widget>[
                           Image(
-                            image: AssetImage('assets/health_icon.png'),
+                            image: AssetImage('assets/transfer.png'),
                             height:  height * 0.12,
                           ),
                           Container(
                             child: Text(
-                              'Health Tips',
+                              'Transfer Data',
                               style: TextStyle(
                                   color: Colors.white,
                                   fontSize: width * 0.05,
@@ -236,20 +231,16 @@ class _HomepageState extends State<Homepage> {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: <Widget>[
                     InkWell(
-                      onTap: ()=>{},
+                      onTap: ()=>Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => MedicationPage())
+                      ),
                       child: Container(
                         width: width * 0.35,
                         padding: EdgeInsets.symmetric(vertical: height * 0.015),
                         decoration: BoxDecoration(
                           borderRadius: const BorderRadius.all(Radius.circular(10)),
-//                          gradient: LinearGradient(
-//                            colors: const [
-//                              Colors.red, Colors.redAccent
-//                            ],
-//                            begin: Alignment.bottomCenter,
-//                            end: Alignment.topCenter,
-//                          ),
-                            color: Color(0xff5EBBB4)
+                            color: Color(0xff4f8d88)
                         ),
                         alignment: Alignment.center,
                         child: Text(
@@ -272,14 +263,7 @@ class _HomepageState extends State<Homepage> {
                         padding: EdgeInsets.symmetric(vertical: height * 0.015),
                         decoration: BoxDecoration(
                           borderRadius: const BorderRadius.all(Radius.circular(10)),
-//                          gradient: LinearGradient(
-//                            colors: const [
-//                              Colors.red, Colors.redAccent
-//                            ],
-//                            begin: Alignment.bottomCenter,
-//                            end: Alignment.topCenter,
-//
-                            color: Color(0xff5EBBB4)
+                            color: Color(0xff4f8d88)
                         ),
                         alignment: Alignment.center,
                         child: Text(
@@ -322,16 +306,11 @@ class _HomepageState extends State<Homepage> {
                       width: width,
                       padding: EdgeInsets.all(width * 0.05),
                       decoration: BoxDecoration(
-//                        border: Border.all(
-//                          color: Colors.blueGrey,
-//                          width: 2
-//                        ),
                         borderRadius: BorderRadius.all(Radius.circular(10)),
-                        color: Color(0xff5EBBB4),
+                        color: Color(0xff4f8d88),
                       ),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.start,
-                        crossAxisAlignment: CrossAxisAlignment.start,
                         children: <Widget>[
                           Container(
                             alignment: Alignment.topLeft,
@@ -342,7 +321,6 @@ class _HomepageState extends State<Homepage> {
                              padding: EdgeInsets.only(left: width * 0.05),
                              child: Text(
                                'Lab & Test \nResults',
-//                               textAlign: TextAlign.center,
                                style: TextStyle(
                                    color: Colors.white,
                                    fontSize: width * 0.056,
@@ -365,33 +343,28 @@ class _HomepageState extends State<Homepage> {
                   onTap: ()=> Navigator.push(
                       context,
                       MaterialPageRoute(
-                          builder: (context) => TransferDataPage()
+                          builder: (context) => TipsPage()
                       )
                   ),
                   child: Container(
                     width: width,
                     padding: EdgeInsets.all(width * 0.05),
                     decoration: BoxDecoration(
-//                        border: Border.all(
-//                          color: Colors.blueGrey,
-//                          width: 2
-//                        ),
                       borderRadius: BorderRadius.all(Radius.circular(10)),
-                      color: Color(0xff5EBBB4),
+                      color: Color(0xff4f8d88),
                     ),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.start,
-                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: <Widget>[
                         Container(
                           alignment: Alignment.topLeft,
-                          child: Image.asset('assets/transfer.png',width: width * 0.18,),
+                          child: Image.asset('assets/health_icon.png',width: width * 0.18,),
                         ),
                         Expanded(
                           child:  Container(
                             padding: EdgeInsets.only(left: width * 0.05),
                             child: Text(
-                              'Transfer Data',
+                              'Health Tips',
 //                               textAlign: TextAlign.center,
                               style: TextStyle(
                                   color: Colors.white,

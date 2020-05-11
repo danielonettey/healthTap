@@ -13,9 +13,9 @@ class _ResultsPageState extends State<ResultsPage> {
     final width = MediaQuery.of(context).size.width;
     final height = MediaQuery.of(context).size.height;
     return Scaffold(
-      backgroundColor: Color(0xff5EBBB4),
+      backgroundColor: Colors.white,
       appBar: AppBar(
-        backgroundColor: Color(0xff5EBBB4),
+        backgroundColor: Color(0xff4f8d88),
         title: Text(
             'Lab & Test Results'
         ),
@@ -31,25 +31,50 @@ class _ResultsPageState extends State<ResultsPage> {
                 alignment: Alignment.bottomLeft,
                 padding: EdgeInsets.only(bottom: height * 0.025),
                 child: Text(
-                  'Lorem something some thisnf jdskf vhsdfhv snmdfb a,bfd hbasmdnfa smbfm sanvf, ndasvbmfn vadsnfvb jhsdfk jhbasdjf ads',
+                  'Lab tests play an important role in your health care '
+                      'but they don\'t provide a complete picture of your health. '
+                      'Your provider will likely include tests and procedures to help guide '
+                      'diagnosis and treatment decisions.',
                   style: TextStyle(
-                      color: Colors.white,
-                      fontSize: width * 0.043,
+                      color: Colors.black,
+                      fontSize: width * 0.042,
+                    fontWeight: FontWeight.w500
                   ),
                 ),
               ),
-//              Container(
-//                alignment: Alignment.bottomLeft,
-//                padding: EdgeInsets.only(bottom: height * 0.05),
-//                child: Text(
-//                  '',
-//                  style: TextStyle(
-//                      color: Colors.white,
-//                      fontSize: width * 0.04,
-//                      fontWeight: FontWeight.w500
-//                  ),
-//                ),
-//              ),
+
+              Container(
+                width: width * 0.5,
+                padding: EdgeInsets.symmetric(vertical: height * 0.05),
+                margin: EdgeInsets.only(bottom: height * 0.05),
+                decoration: BoxDecoration(
+                  color: Color(0xff4f8d88),
+                  border: Border.all(
+                    color: Colors.white,
+                    width: 2
+                  )
+                ),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: <Widget>[
+                    Image.asset('assets/file_upload.png', height: height * 0.1),
+                    Container(
+                      padding: EdgeInsets.only(top: height * 0.02),
+                      child: Text(
+                        'Upload Results',
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontWeight: FontWeight.w600,
+                          fontSize: width * 0.046
+
+                        ),
+                      ),
+                    )
+
+                  ],
+                ),
+              ),
+
               TestResults(),
               TestResults(),
               TestResults(),
@@ -88,6 +113,11 @@ class _TestResultsState extends State<TestResults> {
     final height = MediaQuery.of(context).size.height;
     return Container(
       margin: EdgeInsets.only(top: height * 0.02),
+      padding: EdgeInsets.all(width * 0.05),
+      decoration: BoxDecoration(
+        color: Color(0xff4f8d88),
+        borderRadius: BorderRadius.all(Radius.circular(10))
+      ),
       child: Column(
         children: <Widget>[
           Container(
@@ -98,32 +128,18 @@ class _TestResultsState extends State<TestResults> {
                   DateTime.now().year.toString(),
               style: TextStyle(
                   color: Colors.white,
-                  fontSize: width * 0.04,
-                  fontWeight: FontWeight.w500
+                  fontSize: width * 0.045,
+                  fontWeight: FontWeight.w600
               ),
             ),
           ),
           Container(
             width: width,
-            margin: EdgeInsets.symmetric(horizontal: width * 0.05, vertical: height * 0.02),
-            padding: EdgeInsets.symmetric(vertical: height * 0.01),
-            decoration: BoxDecoration(
-                border: Border(
-                  top: BorderSide(
-                    color: Colors.white,
-                    width: 2,
-                  ),
-                  bottom: BorderSide(
-                    color: Colors.white,
-                    width: 2,
-                  ),
-
-                )
-            ),
+            padding: EdgeInsets.symmetric(vertical: height * 0.02),
             child: Text(
-              'Some random link that is clickable',
+              'https://www.google.com/search?q=googlge+drive&rlz=1C1CHBF_enGH885GH885&oq=googlge+drive&aqs=chrome..69i57j0l7.4443j0j7&sourceid=chrome&ie=UTF-8',
               style: TextStyle(
-                  color: Colors.white,
+                  color: Colors.red,
                   fontSize: width * 0.04,
                   fontWeight: FontWeight.w500
               ),

@@ -28,9 +28,9 @@ class _AddDetailPageState extends State<AddDetailPage> {
     final width = MediaQuery.of(context).size.width;
     final height = MediaQuery.of(context).size.height;
     return Scaffold(
-      backgroundColor: Color(0xff5EBBB4),
+      backgroundColor: Color(0xff4f8d88),
       appBar: AppBar(
-        backgroundColor: Color(0xff5EBBB4),
+        backgroundColor: Color(0xff4f8d88),
         title: Text(
           widget.name,
 
