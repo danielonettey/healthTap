@@ -95,13 +95,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.1.8"
-  nfc_in_flutter:
+  nfc_hce_reader:
     dependency: "direct main"
     description:
-      name: nfc_in_flutter
+      name: nfc_hce_reader
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "2.0.4"
+    version: "0.0.13"
   path:
     dependency: transitive
     description:
@@ -200,4 +200,3 @@ packages:
     version: "3.5.0"
 sdks:
   dart: ">=2.4.0 <3.0.0"
-  flutter: ">=1.10.0"
