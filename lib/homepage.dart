@@ -194,7 +194,7 @@ class _HomepageState extends State<Homepage> {
                       Navigator.push(
                         context,
                         MaterialPageRoute(builder: (context)=>
-                            MyApp()
+                            TransferDataPage()
 //                            TransferDataPage()
                         ),
                       ),
