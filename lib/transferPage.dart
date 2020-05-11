@@ -61,7 +61,7 @@ class _TransferDataPageState extends State<TransferDataPage> {
                 child: ClipRRect(
                   borderRadius: BorderRadius.all(Radius.circular(500)),
                   child: InkWell(
-                    onTap: ()=>{},
+                    onTap: ()=> Navigator.push(context, MaterialPageRoute(builder: (context) => NFCPage())),
                     child: Container(
                       width: width * 0.6,
                       height: width * 0.6,
@@ -91,13 +91,13 @@ class _TransferDataPageState extends State<TransferDataPage> {
   }
 }
 
-
-class MyApp extends StatefulWidget {
+class NFCPage extends StatefulWidget {
   @override
-  _MyAppState createState() => _MyAppState();
+  _NFCPageState createState() => _NFCPageState();
 }
 
-class _MyAppState extends State<MyApp> {
+class _NFCPageState extends State<NFCPage> {
+
   String _message = 'none';
   StreamSubscription<String> _stream;
   bool _isNFCAvaliable = false;
@@ -120,6 +120,7 @@ class _MyAppState extends State<MyApp> {
     try {
       await NfcHceReader.initializeNFCReading();
       _readNFC(context);
+      print('Working');
     } on PlatformException {
 
     }
@@ -152,25 +153,24 @@ class _MyAppState extends State<MyApp> {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
-        appBar: AppBar(
-          title: const Text('Plugin example app'),
-        ),
-        body: Center(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[
-                Text('isNFCEnabled $_isNFCAvaliable'),
-                Visibility(
-                  visible: _isPlatformIOS ,
-                  child: FlatButton(onPressed: () => initPlatformState(),
-                    child: Text('Running on: $_message\n'),
-                  ),
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Transfer Data'),
+        backgroundColor: Color(0xff4f8d88),
+      ),
+      body: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              Text('isNFCEnabled $_isNFCAvaliable'),
+              Visibility(
+                visible: _isPlatformIOS ,
+                child: FlatButton(onPressed: () => initPlatformState(),
+                  child: Text('Running on: $_message\n'),
                 ),
-              ],
-            )
-        ),
+              ),
+            ],
+          )
       ),
     );
   }
