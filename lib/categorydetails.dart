@@ -14,91 +14,78 @@ class CategoryDetails extends StatefulWidget {
 class _CategoryDetailsState extends State<CategoryDetails> {
 
   Map _aboutCategory = {
-    'Height': 'Height is measure of vertical distance, either vertical extent '
-        '(how "tall" something or someone is) or vertical position (how "high" a point is).\n\n'
-        ' For example, "The height of that building is 50 m" or "The height of an airplane is about 10,000 m". '
-        'When the term is used to describe vertical position '
-        '(of, e.g., an airplane) from sea level, height is more often '
-        'called altitude. Furthermore, if the point is attached '
-        'to the Earth (e.g., a mountain peak), then altitude (height above '
-        'sea level) is called elevation.\n\nIn a Cartesian space, height is '
-        'measured along the vertical axis (y) between a specific point and '
-        'another that does not have the same y-value. If both points happen '
-        'to have the same y-value, then their relative height equal to zero.',
+    'Height': 'Human height or stature is the distance from the bottom'
+    ' of the feet to the top of the head in a human body, standing erect.'
+    ' It is usually measured in centimetres when using the metric system,'
+    ' or feet and inches when using the imperial system.',
 
-    'Weight': 'I think about weight is a very incredible idea that can be used for a lot of thing right now but then '
-        'i think i should just lorem this page to make everything easier \n\n'
-        'Or what do you think',
+    'Weight': "Human body weight refers to a person's mass or weight."
+    ' Body weight is measured in kilograms, a measure of mass.',
 
-    'Age' : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. ' 
-    'Integer venenatis volutpat sapien cursus porta. Proin id metus eget felis dictum ultrices ac ut nulla. '
-    'Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.'
-    'Praesent eu metus felis. Aliquam aliquet ex vitae rhoncus sagittis.',    
+    'Age' : 'Age is the amount of time during which a person has lived. '
+    'This is typically measured in years.',    
 
-    'Body Mass' : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. ' 
-    'Integer venenatis volutpat sapien cursus porta. Proin id metus eget felis dictum ultrices ac ut nulla. '
-    'Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.'
-    'Praesent eu metus felis. Aliquam aliquet ex vitae rhoncus sagittis.',
+    'Body Mass Index' : "Body Mass Index (BMI) is a person's weight in kilograms "
+    'divided by the square of height in meters. A high BMI can be an indicator'
+    ' of high body fatness. BMI can be used to screen for weight categories '
+    'that may lead to health problems but it is not diagnostic of'
+    ' the body fatness or health of an individual.',
 
-    'Allergies' : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. ' 
-    'Integer venenatis volutpat sapien cursus porta. Proin id metus eget felis dictum ultrices ac ut nulla. '
-    'Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.'
-    'Praesent eu metus felis. Aliquam aliquet ex vitae rhoncus sagittis.',
+    'Allergies' : ' An allergy is an immune system response to a foreign substance '
+    "that's not typically harmful to your body. These foreign substances are called"
+    ' allergens. They can include certain foods, pollen, or pet dander.',
 
-    'Medications' : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. ' 
-    'Integer venenatis volutpat sapien cursus porta. Proin id metus eget felis dictum ultrices ac ut nulla. '
-    'Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.'
-    'Praesent eu metus felis. Aliquam aliquet ex vitae rhoncus sagittis.',
+    'Medications' : 'A medication is a drug used to diagnose, cure, treat, or prevent '
+    'disease. Drug therapy (pharmacotherapy) is an important part of the medical '
+    'field and relies on the science of pharmacology for continual '
+    'advancement and on pharmacy for appropriate management.',
 
-    'Immunizations' : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. ' 
-    'Integer venenatis volutpat sapien cursus porta. Proin id metus eget felis dictum ultrices ac ut nulla. '
-    'Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.'
-    'Praesent eu metus felis. Aliquam aliquet ex vitae rhoncus sagittis.',
+    'Immunizations' : 'Immunization is the process whereby a person is made immune or '
+    'resistant to an infectious disease, typically by the administration of a vaccine.'
+    " Vaccines stimulate the body's own immune system to protect the person against subsequent infection or disease",
 
-    'Existing conditions' : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. ' 
-    'Integer venenatis volutpat sapien cursus porta. Proin id metus eget felis dictum ultrices ac ut nulla. '
-    'Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.'
-    'Praesent eu metus felis. Aliquam aliquet ex vitae rhoncus sagittis.',
+    'Existing conditions' : 'An existing condition is any condition for which'
+    ' a patient has already received medical advice or treatment.',
 
-    'Blood Pressure' : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. ' 
-    'Integer venenatis volutpat sapien cursus porta. Proin id metus eget felis dictum ultrices ac ut nulla. '
-    'Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.'
-    'Praesent eu metus felis. Aliquam aliquet ex vitae rhoncus sagittis.',
+    'Blood Pressure' : 'Blood pressure readings have two numbers, for example 140/90mmHg.'
+    ' The top number is your systolic blood pressure. (The highest pressure when your'
+    ' heart beats and pushes the blood round your body.) The bottom one is your diastolic '
+    'blood pressure. (The lowest pressure when your heart relaxes between beats.)'
+    "They're both measured in millimetres of mercury (mmHg).",
 
-    'Body Temperature' : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. ' 
-    'Integer venenatis volutpat sapien cursus porta. Proin id metus eget felis dictum ultrices ac ut nulla. '
-    'Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.'
-    'Praesent eu metus felis. Aliquam aliquet ex vitae rhoncus sagittis.',
+    'Body Temperature' : 'Normal human body-temperature is the typical temperature range found in humans.'
+    ' The normal human body temperature range is typically stated as 36.5–37.5 °C. Human body temperature varies..',
 
-    'Heart Rate' : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. ' 
-    'Integer venenatis volutpat sapien cursus porta. Proin id metus eget felis dictum ultrices ac ut nulla. '
-    'Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.'
-    'Praesent eu metus felis. Aliquam aliquet ex vitae rhoncus sagittis.',
+    'Heart Rate' : "Heart rate, also known as pulse, is the number of times a person's"
+    ' heart beats per minute. Normal heart rate varies from person to person, '
+    'but a normal range for adults is 60 to 100 beats per minute, according to the Mayo Clinic. '
+    'A normal resting heart rate for adults ranges from 60 to 100 beats per minute. Generally, '
+    'a lower heart rate at rest implies more efficient heart function and better cardiovascular fitness.',
 
-    'Menstruation' : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. ' 
-    'Integer venenatis volutpat sapien cursus porta. Proin id metus eget felis dictum ultrices ac ut nulla. '
-    'Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.'
-    'Praesent eu metus felis. Aliquam aliquet ex vitae rhoncus sagittis.',
+    'Respiratory rate' : "A person's respiratory rate is the number of "
+    'breaths he/she takes per minute. The normal respiration rate for'
+    ' an adult at rest is 12 to 20 breaths per minute.'
+    '\nA respiration rate under 12 or over 25 breaths '
+    'per minute while resting is considered abnormal.',
 
-    'Cholesterol' : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. ' 
-    'Integer venenatis volutpat sapien cursus porta. Proin id metus eget felis dictum ultrices ac ut nulla. '
-    'Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.'
-    'Praesent eu metus felis. Aliquam aliquet ex vitae rhoncus sagittis.',
+    'Cholesterol' : "Cholesterol is a waxy, fat-like substance that's found "
+    'in all the cells in your body. Your body needs some cholesterol to make hormones,'
+    ' vitamin D, and substances that help you digest foods. Your body makes all the cholesterol it needs.',
 
-    'Dietary Energy' : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. ' 
-    'Integer venenatis volutpat sapien cursus porta. Proin id metus eget felis dictum ultrices ac ut nulla. '
-    'Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.'
-    'Praesent eu metus felis. Aliquam aliquet ex vitae rhoncus sagittis.',
+    'Dietary Energy' : 'The dietary energy supply is the food available for '
+    'human consumption, usually expressed in kilocalories or kilojoules per person per day.'
+    'Dietary energy is derived from fats, carbohydrates, and, to a lesser extent, dietary protein.',
 
-    'Biotin' : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. ' 
-    'Integer venenatis volutpat sapien cursus porta. Proin id metus eget felis dictum ultrices ac ut nulla. '
-    'Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.'
-    'Praesent eu metus felis. Aliquam aliquet ex vitae rhoncus sagittis.',
+    'Biotin' : 'Biotin also called vitamin H, vitamin B₇ or vitamin B₈ is'
+    ' a water-soluble B vitamin. It is involved in a wide range of '
+    'metabolic processes, both in humans and in other organisms,'
+    ' primarily related to the utilization of fats, carbohydrates, and amino acids.',
+    ' Your body needs biotin to help convert certain nutrients into energy.'
+    ' It also plays an important role in the health of your hair, skin, and nails.'
 
-    'Caffeine' : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. ' 
-    'Integer venenatis volutpat sapien cursus porta. Proin id metus eget felis dictum ultrices ac ut nulla. '
-    'Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.'
-    'Praesent eu metus felis. Aliquam aliquet ex vitae rhoncus sagittis.',
+    'Caffeine' : 'Caffeine is a natural stimulant most commonly found in tea,'
+    ' coffee and cacao plants. It works by stimulating the brain and central'
+    ' nervous system, helping you to stay alert and preventing the onset of tiredness. ',
 
 
 
