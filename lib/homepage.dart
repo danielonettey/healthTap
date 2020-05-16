@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:nfcflutter/exampleNFC.dart';
 import 'package:nfcflutter/transferPage.dart';
 
 import 'ResultsPage.dart';
@@ -29,6 +28,7 @@ class Homepage extends StatefulWidget {
 }
 
 class _HomepageState extends State<Homepage> {
+
   @override
   Widget build(BuildContext context) {
     final height = MediaQuery.of(context).size.height;
@@ -193,7 +193,10 @@ class _HomepageState extends State<Homepage> {
                     onTap: ()=>
                       Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context)=> TransferDataPage()),
+                        MaterialPageRoute(builder: (context)=>
+                            MyApp()
+//                            TransferDataPage()
+                        ),
                       ),
                     child: Container(
                       padding: EdgeInsets.all(width * 0.05),

@@ -14,6 +14,7 @@ class EditPage extends StatefulWidget {
 class _EditPageState extends State<EditPage> {
 
   Box _userBox;
+  UserModel userModel;
 
   @override
   void initState() {
@@ -30,6 +31,13 @@ class _EditPageState extends State<EditPage> {
     return;
   }
 //Function to call when button is clicked
+
+
+  final fname = TextEditingController();
+  final sname = TextEditingController();
+  final dob = TextEditingController();
+  final sex = TextEditingController();
+
   doneClicked(){
     //print it literally
     print(fname.text);
@@ -40,16 +48,16 @@ class _EditPageState extends State<EditPage> {
 
     UserModel userModel = UserModel(Random().nextInt(100), fname.text, sname.text, dob.text, sex.text, "", "");
     _userBox.add(userModel);
-    print('Name: ${_userBox.get('userModel')}');
+    
+    Map<dynamic, dynamic> raw = _userBox.toMap();
+    List list = raw.values.toList();
+    userModel = list[1];
     Navigator.pop(context);
   }
 
-  final fname = TextEditingController();
-  final sname = TextEditingController();
-  final dob = TextEditingController();
-  final sex = TextEditingController();
 
   @override
+
   Widget build(BuildContext context) {
     final width = MediaQuery.of(context).size.width;
     final height = MediaQuery.of(context).size.height;
@@ -121,10 +129,10 @@ class _EditPageState extends State<EditPage> {
                 ),
               ),
 
-              ProfileTextField(title: 'First Name', hint: 'Emmanuel',controller: fname,),
-              ProfileTextField(title: 'Last Name', hint: 'Antwi',controller: sname,),
-              ProfileTextField(title: 'Date of Birth', controller: dob,),
-              ProfileTextField(title: 'Sex',controller: sex,),
+              ProfileTextField(title: userModel.first_name, hint: 'Emmanuel',controller: fname,),
+              ProfileTextField(title: userModel.last_name, hint: 'Antwi',controller: sname,),
+              ProfileTextField(title: userModel.date0fBirth, controller: dob,),
+              ProfileTextField(title: userModel.gender,controller: sex,),
 
               Container(
                   margin: EdgeInsets.symmetric(vertical: height * 0.05),
@@ -158,6 +166,7 @@ class _EditPageState extends State<EditPage> {
     );
   }
 }
+  
 
 class ProfileTextField extends StatefulWidget {
   final String title;

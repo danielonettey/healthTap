@@ -305,13 +305,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "0.9.6+3"
-  nfc_in_flutter:
+  nfc_hce_reader:
     dependency: "direct main"
     description:
-      name: nfc_in_flutter
+      name: nfc_hce_reader
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "2.0.4"
+    version: "0.0.13"
   node_interop:
     dependency: transitive
     description:

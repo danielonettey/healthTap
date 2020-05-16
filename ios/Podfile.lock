@@ -1,6 +1,6 @@
 PODS:
   - Flutter (1.0.0)
-  - nfc_in_flutter (1.0.0):
+  - nfc_hce_reader (0.0.1):
     - Flutter
   - path_provider (0.0.1):
     - Flutter
@@ -9,15 +9,15 @@ PODS:
 
 DEPENDENCIES:
   - Flutter (from `Flutter`)
-  - nfc_in_flutter (from `.symlinks/plugins/nfc_in_flutter/ios`)
+  - nfc_hce_reader (from `.symlinks/plugins/nfc_hce_reader/ios`)
   - path_provider (from `.symlinks/plugins/path_provider/ios`)
   - path_provider_macos (from `.symlinks/plugins/path_provider_macos/ios`)
 
 EXTERNAL SOURCES:
   Flutter:
     :path: Flutter
-  nfc_in_flutter:
-    :path: ".symlinks/plugins/nfc_in_flutter/ios"
+  nfc_hce_reader:
+    :path: ".symlinks/plugins/nfc_hce_reader/ios"
   path_provider:
     :path: ".symlinks/plugins/path_provider/ios"
   path_provider_macos:
@@ -25,7 +25,7 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   Flutter: 0e3d915762c693b495b44d77113d4970485de6ec
-  nfc_in_flutter: c656fbfb1ec5b9d021da87b0c87629d62fd5264d
+  nfc_hce_reader: b7a6a26bb5f97b8c46d2e4461b95c8ea7a60a66d
   path_provider: abfe2b5c733d04e238b0d8691db0cfd63a27a93c
   path_provider_macos: f760a3c5b04357c380e2fddb6f9db6f3015897e0
 
