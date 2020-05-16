@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:nfcflutter/transferPage.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 import 'ResultsPage.dart';
 import 'categorypage.dart';
@@ -28,6 +29,14 @@ class Homepage extends StatefulWidget {
 }
 
 class _HomepageState extends State<Homepage> {
+
+  Future<void> _makePhoneCall(String url) async {
+//    if (await canLaunch(url)) {
+      await launch(url);
+//    } else {
+//      throw 'Could not launch $url';
+//    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -341,7 +350,7 @@ class _HomepageState extends State<Homepage> {
               ),
 
               Container(
-                margin: EdgeInsets.only(top: height * 0.02, bottom:  height * 0.05),
+                margin: EdgeInsets.only(top: height * 0.02, bottom:  height * 0.02),
                 child: InkWell(
                   onTap: ()=> Navigator.push(
                       context,
@@ -382,7 +391,45 @@ class _HomepageState extends State<Homepage> {
                     ),
                   ),
                 ),
-              )
+              ),
+
+              Container(
+                margin: EdgeInsets.only(bottom: height * 0.05),
+                child: InkWell(
+                  onTap: () => _makePhoneCall('tel:0209544734'),
+                  child: Container(
+                    width: width,
+                    padding: EdgeInsets.all(width * 0.06),
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.all(Radius.circular(10)),
+                      color: Color(0xff4f8d88),
+                    ),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: <Widget>[
+                        Container(
+                          alignment: Alignment.topLeft,
+                          child: Image.asset('assets/call.png',width: width * 0.15,),
+                        ),
+                        Expanded(
+                          child:  Container(
+                            padding: EdgeInsets.only(left: width * 0.05),
+                            child: Text(
+                              'Emergency call',
+                              style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: width * 0.056,
+                                  fontWeight: FontWeight.w600
+                              ),
+                            ),
+                          ),
+                        )
+
+                      ],
+                    ),
+                  ),
+                ),
+              ),
 
 
             ],
