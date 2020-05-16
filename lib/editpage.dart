@@ -1,4 +1,10 @@
 import 'package:flutter/material.dart';
+import 'dart:math';
+//import 'package:flutter_for_people/hive/newexample/user.model.dart';
+import 'package:hive/hive.dart';
+import 'user.model.dart';
+import 'package:hive_flutter/hive_flutter.dart';
+import 'package:path_provider/path_provider.dart';
 
 class EditPage extends StatefulWidget {
   @override
@@ -7,6 +13,31 @@ class EditPage extends StatefulWidget {
 
 class _EditPageState extends State<EditPage> {
 
+  Box _userBox;
+  UserModel userModel;
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    Hive.registerAdapter(UserModelAdapter());
+    _openBox();
+  }
+
+  Future _openBox() async {
+    var dir = await getApplicationDocumentsDirectory();
+    Hive.init(dir.path);
+    _userBox = await Hive.openBox('_userBox');
+    return;
+  }
+//Function to call when button is clicked
+
+
+  final fname = TextEditingController();
+  final sname = TextEditingController();
+  final dob = TextEditingController();
+  final sex = TextEditingController();
+
   doneClicked(){
     //print it literally
     print(fname.text);
@@ -14,21 +45,25 @@ class _EditPageState extends State<EditPage> {
     print(dob.text);
     print(sex.text);
     //Leave that screen
+
+    UserModel userModel = UserModel(Random().nextInt(100), fname.text, sname.text, dob.text, sex.text, "", "");
+    _userBox.add(userModel);
+    
+    Map<dynamic, dynamic> raw = _userBox.toMap();
+    List list = raw.values.toList();
+    userModel = list[1];
     Navigator.pop(context);
   }
 
-  final fname = TextEditingController();
-  final sname = TextEditingController();
-  final dob = TextEditingController();
-  final sex = TextEditingController();
 
   @override
+
   Widget build(BuildContext context) {
     final width = MediaQuery.of(context).size.width;
     final height = MediaQuery.of(context).size.height;
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Color(0xff4f8d88),
+        backgroundColor: Color(0xff6B9DA8),
         title: Text(
           'Edit Profile',
         ),
@@ -94,10 +129,10 @@ class _EditPageState extends State<EditPage> {
                 ),
               ),
 
-              ProfileTextField(title: 'First Name', hint: 'Emmanuel',controller: fname,),
-              ProfileTextField(title: 'Last Name', hint: 'Antwi',controller: sname,),
-              ProfileTextField(title: 'Date of Birth', controller: dob,),
-              ProfileTextField(title: 'Sex',controller: sex,),
+              ProfileTextField(title: userModel.first_name, hint: 'Emmanuel',controller: fname,),
+              ProfileTextField(title: userModel.last_name, hint: 'Antwi',controller: sname,),
+              ProfileTextField(title: userModel.date0fBirth, controller: dob,),
+              ProfileTextField(title: userModel.gender,controller: sex,),
 
               Container(
                   margin: EdgeInsets.symmetric(vertical: height * 0.05),
@@ -109,7 +144,7 @@ class _EditPageState extends State<EditPage> {
                       padding: EdgeInsets.symmetric(vertical: height * 0.02),
                       decoration: BoxDecoration(
                         borderRadius: const BorderRadius.all(Radius.circular(10)),
-                        color: Color(0xff4f8d88),
+                        color: Color(0xff5EBBB4),
                       ),
                       alignment: Alignment.center,
                       child: Text(
@@ -131,6 +166,7 @@ class _EditPageState extends State<EditPage> {
     );
   }
 }
+  
 
 class ProfileTextField extends StatefulWidget {
   final String title;
