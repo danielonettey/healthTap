@@ -20,7 +20,7 @@ final _subcategories = {
     'Blood Pressure' : null,
     'Body Temperature': null,
     'Heart Rate': null,
-    'Menstruation': null,
+    'Respiratory rate': null,
   },
   'Nutrition': {
     'Cholesterol' : null,
@@ -128,24 +128,36 @@ class Category extends StatefulWidget {
 class _CategoryState extends State<Category> {
 
   final _briefTitle = <String, String>{
-    'Nutrition':'Heart rate, also known as pulse,'
-        ' is the number of times a person\'s heart beats per '
-        'minute. Normal heart rate varies from person to person, '
-        'but a normal range for adults is 60 to 100 beats per minute, '
-        'according to the Mayo Clinic.',
+    'Nutrition':'Nutrition is the science that interprets'
+    ' the nutrients and other substances in food in '
+    'relation to maintenance, growth, reproduction, '
+    'health and disease of an organism.\n'
+    'It is simply the process of providing '
+    'or obtaining the food necessary for health and growth.',
 
-    'Body Measurements':'Most women have a good idea what '
-        'their measurements are, but rather than assume you '
-        'know, get an accurate measurement. Going to a tailor '
-        'will give you more accurate measurements, but you '
-        'can certainly get a close approximation handling the '
-        'measuring tape yourself. ',
+    'Body Measurements':'Body Measurements deal with the'
+      ' measurement of body parts. It involves measuring'
+      ' the body width, length and grith and it’s parts'
+      ' in specific areas on the body.\nGoing to a tailor '
+      'will give you more accurate measurements, but you '
+      'can certainly get a close approximation handling the '
+      'measuring tape yourself. ',
 
     'Health Records':'Health Record include any official diagnosis or'
         'past prescriptions that apply to you. This will make medical '
         'officials aware of any past or current conditions. ',
 
-    'Vitals': 'Vitals include ',    
+    'Vitals': "Vital signs are measurements of the body's"
+    ' most basic functions. The four main vital signs '
+    'routinely monitored by medical professionals and '
+    'health care providers include: \n1. Body temperature '
+    '\n2. Pulse rate \n3. Respiration rate (rate of breathing)'
+    '\n4. Blood pressure (Blood pressure is not considered'
+    ' a vital sign, but is often measured along with the vital signs.)'
+    '\n\nVital signs are useful in detecting or monitoring'
+    ' medical problems. Vital signs can be measured in '
+    'a medical setting, at home, at the site '
+    'of a medical emergency, or elsewhere.',    
 
   };
 
